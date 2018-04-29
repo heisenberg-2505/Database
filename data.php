@@ -1,5 +1,6 @@
-// PHP script to create a database.
+
 <?php
+// PHP script to create a database.
 $servername = "localhost";
 $username = "project";
 $password = "csl301project";
