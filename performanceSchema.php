@@ -1,5 +1,5 @@
 <?php
-//php script to create the database schema.
+//php script to create the database schema table performance.
 $servername = "localhost";
 $username = "project";
 $password = "csl301project";
@@ -8,11 +8,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn->connection_error) {
   echo("connection failed: ". $conn->connect_error);
 }
-$sql = "CREATE TABLE Student (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  firstName VARCHAR(255) NOT NULL,
-  lastName VARCHAR(255) NOT NULL,
-  cgpa FLOAT
+$sql = "CREATE TABLE Performance (
+  id INT PRIMARY KEY,
+  semester VARCHAR(255) NOT NULL,
+  year INT NOT NULL,
+  credits INT,
+  sgpa INT,
+  FOREIGN KEY(id) REFERENCES Student(id)
 )";
 if($conn->query($sql) === TRUE) {
   echo "Table created successfully";

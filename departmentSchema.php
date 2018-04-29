@@ -1,5 +1,5 @@
 <?php
-//php script to create the database schema.
+// php script to create the database schema table department.
 $servername = "localhost";
 $username = "project";
 $password = "csl301project";
@@ -8,11 +8,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn->connection_error) {
   echo("connection failed: ". $conn->connect_error);
 }
-$sql = "CREATE TABLE Student (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  firstName VARCHAR(255) NOT NULL,
-  lastName VARCHAR(255) NOT NULL,
-  cgpa FLOAT
+$sql = "CREATE TABLE Department (
+  name VARCHAR(255) PRIMARY KEY NOT NULL,
+  building VARCHAR(255) NOT NULL
 )";
 if($conn->query($sql) === TRUE) {
   echo "Table created successfully";
