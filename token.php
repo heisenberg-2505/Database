@@ -9,12 +9,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // sql to create table
-$sql = "CREATE TABLE course(
+$sql = "CREATE TABLE Token(
 name VARCHAR(255),
 code VARCHAR(255),
-lecture INT,
-tutorial INT,
-practical INT,
+sid INT,
+cid INT,
+id INT,
 PRIMARY KEY(code)
 
 )";

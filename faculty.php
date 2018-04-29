@@ -9,17 +9,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // sql to create table
-$sql = "CREATE TABLE Course(
+$sql = "CREATE TABLE Faculty(
 name VARCHAR(255),
-code VARCHAR(255),
-lecture INT,
-tutorial INT,
-practical INT,
-PRIMARY KEY(code)
+id INT,
+PRIMARY KEY(id)
 
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table course created successfully";
+    echo "Table Faculty created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }
