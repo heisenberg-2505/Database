@@ -1,5 +1,5 @@
 <?php
-// php script to create the database schema table batch.
+// php script to create the database schema table slot.
 $servername = "localhost";
 $username = "project";
 $password = "csl301project";
@@ -8,8 +8,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if($conn->connection_error) {
   echo("connection failed: ". $conn->connect_error);
 }
-$sql = "CREATE TABLE Batch (
-  year INT PRIMARY KEY NOT NULL
+$sql = "CREATE TABLE Slot (
+  id INT PRIMARY KEY NOT NULL
 )";
 if($conn->query($sql) === TRUE) {
   echo "Table created successfully";
