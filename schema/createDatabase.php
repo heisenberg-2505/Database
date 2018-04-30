@@ -19,7 +19,7 @@ include 'belongs.php';
 include 'takes.php';
 include 'offers.php';
 include 'offeredFor.php';
-include 'preRequisites.php';
+include 'prerequisites.php';
 include 'facultyDepartment.php';
 include 'approves.php';
 
