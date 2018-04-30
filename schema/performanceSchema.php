@@ -9,11 +9,12 @@ if($conn->connection_error) {
   echo("connection failed: ". $conn->connect_error);
 }
 $sql = "CREATE TABLE Performance (
-  id INT PRIMARY KEY,
+  id INT,
   semester VARCHAR(255) NOT NULL,
   year INT NOT NULL,
   credits INT,
-  sgpa INT,
+  sgpa FLOAT,
+  PRIMARY KEY(id, semester, year),
   FOREIGN KEY(id) REFERENCES Student(id)
 )";
 if($conn->query($sql) === TRUE) {
