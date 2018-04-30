@@ -12,9 +12,9 @@ if ($conn->connect_error) {
 $sql = "CREATE TABLE Token(
 id INT AUTO_INCREMENT PRIMARY KEY,
 studentId INT NOT NULL,
-courseId VARCHAR(255) NOT NULL,
+courseCode VARCHAR(255) NOT NULL,
 FOREIGN KEY(studentId) REFERENCES Student(id),
-FOREIGN KEY(courseId) REFERENCES Course(id)
+FOREIGN KEY(courseCode) REFERENCES Course(code)
 )";
 if ($conn->query($sql) === TRUE) {
     echo "Table token created successfully";

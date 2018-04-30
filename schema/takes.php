@@ -10,7 +10,7 @@ if($conn->connect_error) {
 }
 $sql = "CREATE TABLE Takes (
   studentId INT NOT NULL,
-  courseCode INT NOT NULL,
+  courseCode VARCHAR(255) NOT NULL,
   grade FLOAT,
   semester VARCHAR(255) NOT NULL,
   year INT NOT NULL,

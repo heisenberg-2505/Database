@@ -16,10 +16,10 @@ hodId INT NOT NULL,
 advisorId INT NOT NULL,
 deanAcademicsId INT NOT NULL,
 FOREIGN KEY(tokenId) REFERENCES Token(id),
-FOREIGN KEY(instructorID) REFERENCES Instructor(id),
-FOREIGN KEY(hodId) REFERENCES HOD(id),
-FOREIGN KEY(advisorId) REFERENCES Advisor(id),
-FOREIGN KEY(deanAcademicsId) REFERENCES DeanAcademics(id)
+FOREIGN KEY(instructorID) REFERENCES Faculty(id),
+FOREIGN KEY(hodId) REFERENCES Faculty(id),
+FOREIGN KEY(advisorId) REFERENCES Faculty(id),
+FOREIGN KEY(deanAcademicsId) REFERENCES Faculty(id)
 )";
 if ($conn->query($sql) === TRUE) {
     echo "Table token created successfully";
