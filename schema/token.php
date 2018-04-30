@@ -9,12 +9,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // sql to create table
-$sql = "CREATE TABLE Faculty(
-name VARCHAR(255) NOT NULL,
-id INT AUTO_INCREMENT PRIMARY KEY
+$sql = "CREATE TABLE Token(
+id INT AUTO_INCREMENT PRIMARY KEY,
+studentId INT NOT NULL,
+courseId VARCHAR(255) NOT NULL,
+FOREIGN KEY(studentId) REFERENCES Student(id),
+FOREIGN KEY(courseId) REFERENCES Course(id)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table Faculty created successfully";
+    echo "Table token created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }
