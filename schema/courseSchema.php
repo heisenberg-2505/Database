@@ -19,9 +19,9 @@ PRIMARY KEY(code)
 
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table course created successfully";
+    echo "Table Course created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating Course table: " . $conn->error;
 }
 $conn->close();
 ?>

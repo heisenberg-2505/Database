@@ -11,12 +11,14 @@ if ($conn->connect_error) {
 // sql to create table
 $sql = "CREATE TABLE Faculty(
 name VARCHAR(255) NOT NULL,
-id INT AUTO_INCREMENT PRIMARY KEY
+id VARCHAR(255) PRIMARY KEY,
+departmentName VARCHAR(255) NOT NULL,
+FOREIGN KEY(departmentName) REFERENCES Department(name)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table Faculty created successfully";
+    echo "Table Faculty created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating Faculty table: " . $conn->error;
 }
 $conn->close();
 ?>

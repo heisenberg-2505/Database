@@ -1,5 +1,4 @@
 <?php
-
 include 'departmentSchema.php';
 include 'batchSchema.php';
 include 'studentSchema.php';
@@ -18,9 +17,9 @@ include 'approved.php';
 include 'belongs.php';
 include 'takes.php';
 include 'offers.php';
+include 'offeredBy.php';
 include 'offeredFor.php';
-include 'prerequisites.php';
-include 'facultyDepartment.php';
+include 'preRequisites.php';
 include 'approves.php';
 
 include 'facultyLogin.php';

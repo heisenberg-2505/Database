@@ -5,20 +5,20 @@ $username = "project";
 $password = "csl301project";
 $dbname = "csl301";
 $conn = new mysqli($servername, $username, $password, $dbname);
-if($conn->connection_error) {
+if($conn->connect_error) {
   echo("connection failed: ". $conn->connect_error);
 }
 $sql = "CREATE TABLE Student (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+  id VARCHAR(255) PRIMARY KEY,
   firstName VARCHAR(255) NOT NULL,
   lastName VARCHAR(255) NOT NULL,
   cgpa FLOAT
 )";
 if($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
+  echo "Table StudentSchema created successfully\n";
 }
 else {
-  echo "Error creating table: " .$conn->error;
+  echo "Error creating StudentSchema table: " .$conn->error;
 }
 $conn->close();
 ?>

@@ -5,7 +5,7 @@ $username = "project";
 $password = "csl301project";
 $dbname = "csl301";
 $conn = new mysqli($servername, $username, $password, $dbname);
-if($conn->connection_error) {
+if($conn->connect_error) {
   echo("connection failed: ". $conn->connect_error);
 }
 $sql = "CREATE TABLE Department (
@@ -13,10 +13,10 @@ $sql = "CREATE TABLE Department (
   building VARCHAR(255) NOT NULL
 )";
 if($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
+  echo "Table Department created successfully\n";
 }
 else {
-  echo "Error creating table: " .$conn->error;
+  echo "Error creating Department table: " .$conn->error;
 }
 $conn->close();
 ?>

@@ -10,13 +10,13 @@ if ($conn->connect_error) {
 }
 // sql to create table
 $sql = "CREATE TABLE DeanAcademics(
-facultyId INT NOT NULL PRIMARY KEY,
+facultyId VARCHAR(255) NOT NULL PRIMARY KEY,
 FOREIGN KEY(facultyId) REFERENCES Faculty(id)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table token created successfully";
+    echo "Table DeanAcademics created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating DeanAcademics table: " . $conn->error;
 }
 $conn->close();
 ?>

@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 $sql = "CREATE TABLE Offers(
 courseCode VARCHAR(255) NOT NULL,
 slotId INT NOT NULL,
-facultyId INT NOT NULL,
+facultyId VARCHAR(255) NOT NULL,
 departmentName VARCHAR(255) NOT NULL,
 cgpa FLOAT,
 maxStudents INT,
@@ -23,9 +23,9 @@ FOREIGN KEY(departmentName) REFERENCES Department(name),
 PRIMARY KEY(courseCode, facultyId)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table token created successfully";
+    echo "Table Offers created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating Offers table: " . $conn->error;
 }
 $conn->close();
 ?>

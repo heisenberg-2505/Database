@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 // sql to create table
 $sql = "CREATE TABLE OfferedFor(
 courseCode VARCHAR(255) NOT NULL,
-facultyId INT NOT NULL,
+facultyId VARCHAR(255) NOT NULL,
 departmentName VARCHAR(255),
 batchYear INT,
 FOREIGN KEY(courseCode) REFERENCES Course(code),
@@ -21,9 +21,9 @@ FOREIGN KEY(batchYear) REFERENCES Batch(year),
 PRIMARY KEY(courseCode, facultyId, departmentName, batchYear)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table token created successfully";
+    echo "Table OfferedFor created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating OfferedFor table: " . $conn->error;
 }
 $conn->close();
 ?>

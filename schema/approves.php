@@ -11,10 +11,10 @@ if ($conn->connect_error) {
 // sql to create table
 $sql = "CREATE TABLE Approves(
 tokenId INT PRIMARY KEY,
-instructorID INT NOT NULL,
-hodId INT NOT NULL,
-advisorId INT NOT NULL,
-deanAcademicsId INT NOT NULL,
+instructorID VARCHAR(255) NOT NULL,
+hodId VARCHAR(255) NOT NULL,
+advisorId VARCHAR(255) NOT NULL,
+deanAcademicsId VARCHAR(255) NOT NULL,
 FOREIGN KEY(tokenId) REFERENCES Token(id),
 FOREIGN KEY(instructorID) REFERENCES Faculty(id),
 FOREIGN KEY(hodId) REFERENCES Faculty(id),
@@ -22,9 +22,9 @@ FOREIGN KEY(advisorId) REFERENCES Faculty(id),
 FOREIGN KEY(deanAcademicsId) REFERENCES Faculty(id)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table token created successfully";
+    echo "Table Approves created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating Approves table: " . $conn->error;
 }
 $conn->close();
 ?>

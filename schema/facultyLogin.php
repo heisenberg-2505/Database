@@ -16,9 +16,9 @@ PRIMARY KEY(username)
 
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table FacultyLogin created successfully";
+    echo "Table FacultyLogin created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating FacultyLogin table: " . $conn->error;
 }
 $conn->close();
 ?>

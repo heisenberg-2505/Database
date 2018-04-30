@@ -9,16 +9,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // sql to create table
-$sql = "CREATE TABLE PreRequisites(
-courseId VARCHAR(255),
-preRequisiteId VARCHAR(255),
-FOREIGN KEY(courseId) REFERENCES Course(code),
-FOREIGN KEY(preRequisiteId) REFERENCES Course(code)
+$sql = "CREATE TABLE OfferedBy(
+courseCode VARCHAR(255) PRIMARY KEY,
+departmentName VARCHAR(255),
+FOREIGN KEY(courseCode) REFERENCES Course(code),
+FOREIGN KEY(departmentName) REFERENCES Department(name)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table token created successfully";
+    echo "Table OfferedBy created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating OfferedBy table: " . $conn->error;
 }
 $conn->close();
 ?>

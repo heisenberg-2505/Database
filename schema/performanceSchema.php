@@ -5,11 +5,11 @@ $username = "project";
 $password = "csl301project";
 $dbname = "csl301";
 $conn = new mysqli($servername, $username, $password, $dbname);
-if($conn->connection_error) {
+if($conn->connect_error) {
   echo("connection failed: ". $conn->connect_error);
 }
 $sql = "CREATE TABLE Performance (
-  id INT,
+  id VARCHAR(255) NOT NULL,
   semester VARCHAR(255) NOT NULL,
   year INT NOT NULL,
   credits INT,
@@ -18,10 +18,10 @@ $sql = "CREATE TABLE Performance (
   FOREIGN KEY(id) REFERENCES Student(id)
 )";
 if($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
+  echo "Table Performance created successfully\n";
 }
 else {
-  echo "Error creating table: " .$conn->error;
+  echo "Error creating Performance table: " .$conn->error;
 }
 $conn->close();
 ?>

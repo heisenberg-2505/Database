@@ -9,16 +9,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // sql to create table
-$sql = "CREATE TABLE HOD(
-facultyId INT PRIMARY KEY,
+$sql = "CREATE TABLE Hod(
+facultyId VARCHAR(255) PRIMARY KEY,
 departmentName VARCHAR(255),
 FOREIGN KEY(facultyId) REFERENCES Faculty(id),
 FOREIGN KEY(departmentName) REFERENCES Department(name)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table token created successfully";
+    echo "Table Hod created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating Hod table: " . $conn->error;
 }
 $conn->close();
 ?>

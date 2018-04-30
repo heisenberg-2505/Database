@@ -9,7 +9,7 @@ if($conn->connect_error) {
   echo("connection failed: ". $conn->connect_error);
 }
 $sql = "CREATE TABLE Takes (
-  studentId INT NOT NULL,
+  studentId VARCHAR(255) NOT NULL,
   courseCode VARCHAR(255) NOT NULL,
   grade FLOAT,
   semester VARCHAR(255) NOT NULL,
@@ -19,10 +19,10 @@ $sql = "CREATE TABLE Takes (
   PRIMARY KEY(studentId, courseCode)
 )";
 if($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
+  echo "Table Takes created successfully\n";
 }
 else {
-  echo "Error creating table: " .$conn->error;
+  echo "Error creating Takes table: " .$conn->error;
 }
 $conn->close();
 ?>

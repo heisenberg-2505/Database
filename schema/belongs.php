@@ -9,7 +9,7 @@ if($conn->connect_error) {
   echo("connection failed: ". $conn->connect_error);
 }
 $sql = "CREATE TABLE Belongs (
-  studentId INT PRIMARY KEY,
+  studentId VARCHAR(255) PRIMARY KEY,
   batchYear INT NOT NULL,
   departmentName VARCHAR(255) NOT NULL,
   FOREIGN KEY(studentId) REFERENCES Student(id),
@@ -17,10 +17,10 @@ $sql = "CREATE TABLE Belongs (
   FOREIGN KEY(departmentName) REFERENCES Department(name)
 )";
 if($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
+  echo "Table Belongs created successfully\n";
 }
 else {
-  echo "Error creating table: " .$conn->error;
+  echo "Error creating Belongs table: " .$conn->error;
 }
 $conn->close();
 ?>

@@ -18,9 +18,9 @@ byDeanAcademics BIT DEFAULT 0,
 FOREIGN KEY(tokenId) REFERENCES Token(id)
 )";
 if ($conn->query($sql) === TRUE) {
-    echo "Table token created successfully";
+    echo "Table Approved created successfully\n";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating Approved table: " . $conn->error;
 }
 $conn->close();
 ?>
