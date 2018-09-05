@@ -232,17 +232,6 @@ input:checked + .slider:before {
 	margin: 0;
 }
 
-#header{
-    display:block;
-    position:fixed;
-    color:white;
-    background : rgb(10,100,120);
-    top:0px;
-    width:100%;
-    right:0px;
-    display:block;
-    height:21%;
-}
 
 img{
     position:fixed;
@@ -341,4 +330,9 @@ h2{
 
 .loginIndex{
     background:rgb(200,30,80);
+}
+.header{
+	 background-color: grey;
+   
+
 }
